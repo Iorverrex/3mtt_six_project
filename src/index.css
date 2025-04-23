@@ -1,0 +1,30 @@
+body{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font: 1em sans-serif;
+}
+div{
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 600px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 2;
+}
+h1{
+  color: #333;
+}
+h2{
+  color: #666;
+}
+ul li{
+  list-style: none;
+  padding: 0.5em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+text-align: center;
+flex-direction: column;
+}
+
