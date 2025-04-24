@@ -1,3 +1,5 @@
+# Objective 
+The project is to build a functional react component that fetches data from the API and displays a list of items. 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
