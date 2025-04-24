@@ -2,13 +2,13 @@ import React from 'react';
 import ProjectAss from './Project';
 import ParentComponent from './ParentComponent';
 
-
+// 
 const App = ()=>{
 
   const data = [
-    { id: 1, title: 'Item 1' },
-    { id: 2, title: 'Item 2' },
-    { id: 3, title: 'Item 3' }
+    { id: 1, name: 'Tersur' },
+    { id: 2, name: 'Rex' },
+    { id: 3, name: 'Iorver' }
   ];
 
   const names = ['John', 'rex', 'Doe', 'Tersur', 'Smith'];
