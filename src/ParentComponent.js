@@ -23,7 +23,7 @@ const ParentComponent = () => {
 	  } catch (err) {
 		setError(err.message);
 	  } finally {
-		setLoading(true);
+		setLoading(false);
 	  }
 	};
 
@@ -38,8 +38,7 @@ const ParentComponent = () => {
 	return <div>Error: {error}</div>;
   }
 
-  return data.length > 0 ? <ListComponent data={data} /> : 
-  <div>No data available</div>;
+  return data.length > 0 ? <ListComponent data={data} /> : null;
 };
 
 export default ParentComponent;

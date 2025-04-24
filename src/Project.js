@@ -1,15 +1,14 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// 1. Create a custom hook to fetch data from an API. The hook should handle loading and error states.
+// The hook should return the fetched data, loading state, and error state. 
+// Use axios for making API requests.
+// The custom hook should be reusable and can be used in any component.
+// The hook should accept a URL as a parameter and return the fetched data, 
+// loading state, and error state.
 
-const ProjectAss = () => {
-    // 1. Fetching Data from an API:
-    // Use the fetch API to retrieve data from a public API (e.g., JSON Placeholder, Rick and Morty API, or any other free API).
-    // Store the fetched data in React state using the useState hook.
-    // Use the useEffect hook to fetch data when the component mounts.
-    // Handle loading states and errors gracefully.
-
+const useFetch = (url) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -17,7 +16,7 @@ const ProjectAss = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+                const response = await axios.get(url);
                 setData(response.data);
             } catch (error) {
                 setError(error);
@@ -27,24 +26,9 @@ const ProjectAss = () => {
         };
 
         fetchData();
-    }, []);
+    }, [url]);
 
-    return ( 
-        <>
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error.message}</p>}
-            {!loading && !error && (
-                <ul>
-                    {data.map((item) => (
-                        <li key={item.id}>{item.title}</li>
-                    ))}
-                </ul>
-            )};
+    return { data, loading, error };
+};
 
-    
-
-        </>
-     );
-}
-
-export default ProjectAss;
+export default useFetch;
